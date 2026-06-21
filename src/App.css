@@ -1,0 +1,200 @@
+#body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #FEEFCD;
+  padding: 0px 30px;
+  position: relative;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+ font-family: "Roboto", sans-serif;
+}
+
+#container {
+  background-color: #6d6d6d;
+  max-width: 535px;
+  height: 680px;
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 18px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 5px 10px 20px #000000;
+}
+
+#bigMuff {
+  text-align: center;
+  overflow: hidden;
+  flex-grow: 1;
+  background-color: #30751e;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 18px;
+  border: 4px #000000 solid;
+  padding-top: 15px;
+
+}
+
+#header {
+  padding: 12px 0px;
+}
+
+#dialsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 400;
+  font-size: 3rem;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: -5px 5px #000000;
+}
+
+.dialContainer {
+  margin: auto;
+  position: relative;
+}
+
+.dial {
+  background-color: #121212;
+  color: #ffffff;
+  height: 120px;
+  width: 120px;
+  border-radius: 80px;
+  font-size: 1.5rem;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px #000000;
+}
+
+.dialLead {
+  height: 60px;
+  width: 10px;
+  position: absolute;
+  right: 55px;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+.dialTitle {
+ padding: 12px 0px;
+ text-transform: uppercase;
+  font-optical-sizing: auto;
+  font-style: bold;
+}
+
+#title {
+  text-align: left;
+  z-index: 2;
+  position: relative;
+  padding-left: 20px;
+}
+
+#light {
+  height: 30px;
+  width: 30px;
+  background-color: red;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 30px;
+  border: 1px solid #000000;
+  z-index: 3;
+  position: relative;
+  box-shadow: 0px 0px 20px #000000;
+}
+
+#titleContainer {
+  padding: 80px 0px;
+  position: relative;
+  width: 100%;
+}
+
+#reverbLogo {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  top: 10px;
+  right: -60px;
+  z-index: 1;
+}
+
+#name {
+  font-size: 22px;
+  text-transform: uppercase;
+ font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  text-decoration: underline;
+
+}
+
+#ghLink {
+  color: #000000;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#bottomContainer {
+  padding-top: 32px;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#activateButton {
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  background-color: #6d6d6d;
+  border: 2px solid #000000;
+}
+
+.infoContainer {
+  background-color: #ffffff;
+  height: 680px;
+  width: 400px;
+  border: 2px solid #000000;
+  border-radius: 18px;
+  padding: 12px;
+}
+
+.infoTitle {
+  color: #FF6200;
+  text-align: center;
+  text-decoration: underline;
+  text-transform: uppercase;
+  /* font-family: "Lilita One", sans-serif; */
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.infoDropDownHeader {
+  padding: 12px 0px;
+  border-bottom: 2px solid #000000;
+}
+
+.infoDropDownDescription {
+  padding: 18px 2px;
+  line-height: 20px;
+  font-weight: normal;
+}
+
+#toggleContainer {
+  width: 100px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: left;
+  line-height: 25px;
+}
