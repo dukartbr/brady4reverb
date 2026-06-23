@@ -1,18 +1,25 @@
 import { useRef } from 'react';
 
-export default function Dial({title, position, setPosition}: {title: string, position: number, setPosition: (position: number) => void}) {
+export default function Dial({title, position, setPosition, cb}: {title: string, position: number, setPosition: (position: number) => void, cb?: () => void}) {
   const startY = useRef(0);
+	const startX = useRef(0);
   const startValue = useRef(0);
 
-	function handlePointerDown(e) {
+	function handlePointerDown(e: any) {
+		e.preventDefault();
 		startY.current = e.clientY
+		startX.current = e.clientX
 		startValue.current = position;
 
-		function handlePointerMove(mover) {
+		function handlePointerMove(mover: any) {
 			const deltaY = startY.current - mover.clientY;
-			const nextValue = startValue.current + deltaY;
+			const deltaX = startY.current - mover.clientY;
+			const nextValue = startValue.current + deltaY + deltaX;
 			const clamped = Math.max(-140, Math.min(140, nextValue));
 			setPosition(clamped)
+			if (cb) {
+				cb()
+			}
 		}
 
 		const handlePointerUp = () => {

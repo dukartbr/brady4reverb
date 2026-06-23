@@ -1,14 +1,90 @@
-#body {
+body {
   height: 100vh;
-  width: 100vw;
   background-color: #FEEFCD;
-  padding: 0px 30px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+#header {
+  color: white;
+  background-color: #FF6200;
+  padding: 12px 5%;
+  font-weight: bold;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+#contactLink:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+#main {
+  padding: 20px 40px 0px;
   position: relative;
   align-content: center;
   align-items: center;
   display: flex;
+  max-width: 1432px;
+  margin-right: auto;
+  margin-left: auto;
   font-weight: bold;
- font-family: "Roboto", sans-serif;
+}
+
+#modal {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  width: 600px;
+  height: 200px;
+  background-color: #ffffff;
+  z-index: 5;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 0px 100vw rgb(0, 0, 0, 80%);
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+}
+
+#modalHeader {
+  font-weight: bold;
+  font-size: 2rem;
+  padding-bottom: 6px;
+  border-bottom: 4px solid #FF6200;
+  margin-bottom: 25px;
+}
+
+#modalContact {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 25px;
+}
+
+.modalIcon {
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 2rem;
+  color: #FF6200
+}
+
+.modalIconTitle {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+  color: #FF6200;
+}
+
+#modalContact a {
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin: auto;
+  text-align: center;
 }
 
 #container {
@@ -16,7 +92,7 @@
   max-width: 535px;
   height: 680px;
   flex-grow: 1;
-  padding: 10px;
+  padding: 15px;
   border-radius: 18px;
   display: flex;
   margin-left: auto;
@@ -28,17 +104,12 @@
   text-align: center;
   overflow: hidden;
   flex-grow: 1;
-  background-color: #30751e;
+  background-color: #33670E;
   margin-left: auto;
   margin-right: auto;
   border-radius: 18px;
   border: 4px #000000 solid;
   padding-top: 15px;
-
-}
-
-#header {
-  padding: 12px 0px;
 }
 
 #dialsContainer {
@@ -72,6 +143,8 @@
   position: relative;
   cursor: pointer;
   box-shadow: 0px 0px 20px #000000;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .dialLead {
@@ -84,10 +157,10 @@
 }
 
 .dialTitle {
- padding: 12px 0px;
+ padding: 12px 0px 32px;
  text-transform: uppercase;
-  font-optical-sizing: auto;
-  font-style: bold;
+ font-optical-sizing: auto;
+ font-style: bold;
 }
 
 #title {
@@ -97,21 +170,20 @@
   padding-left: 20px;
 }
 
-#light {
-  height: 30px;
-  width: 30px;
-  background-color: red;
-  margin-right: auto;
-  margin-left: auto;
+.light {
+  height: 20px;
+  width: 20px;
+  background-color: #6a0000;
+  left: 180px;
   border-radius: 30px;
   border: 1px solid #000000;
   z-index: 3;
-  position: relative;
-  box-shadow: 0px 0px 20px #000000;
+  position: absolute;
+  box-shadow: 0px 0px 5px #000000;
 }
 
 #titleContainer {
-  padding: 80px 0px;
+  padding: 80px 0px 40px;
   position: relative;
   width: 100%;
 }
@@ -128,7 +200,7 @@
 #name {
   font-size: 22px;
   text-transform: uppercase;
- font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-optical-sizing: auto;
   font-weight: bold;
   text-decoration: underline;
@@ -144,30 +216,63 @@
 }
 
 #bottomContainer {
-  padding-top: 32px;
   align-content: center;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
   width: 100%;
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+#hireTitle {
+  padding: 12px 32px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-optical-sizing: auto;
+  font-style: bold;
+  background-color: #FF6200;
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  cursor: pointer;
 }
 
 #activateButton {
   height: 60px;
   width: 60px;
   border-radius: 50px;
+  background-color: #383838;
+  border: 2px solid #000000;
+  position: relative;
+  z-index: 4;
+  cursor: pointer;
+}
+
+#activateButtonSwitch {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
   background-color: #6d6d6d;
   border: 2px solid #000000;
+  top: 2px;
+  left: 2px;
+  position: absolute;
+  cursor: pointer;
+  box-shadow: 5px 5px 15px #000000;
 }
 
 .infoContainer {
   background-color: #ffffff;
   height: 680px;
-  width: 400px;
+  width: 350px;
   border: 2px solid #000000;
   border-radius: 18px;
   padding: 12px;
+  box-shadow: 5px 5px 5px #727272;
+  overflow: hidden;
 }
 
 .infoTitle {
@@ -175,7 +280,6 @@
   text-align: center;
   text-decoration: underline;
   text-transform: uppercase;
-  /* font-family: "Lilita One", sans-serif; */
   font-size: 2rem;
   font-weight: bold;
 }
@@ -189,12 +293,60 @@
   padding: 18px 2px;
   line-height: 20px;
   font-weight: normal;
+  cursor: initial
+}
+
+.infoDropDownDescriptionList {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoDropDownDescriptionList a {
+  text-decoration: none;
+  color: #000000;
+    padding: 6px 0px;
+}
+
+.infoDropDownDescriptionList a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #000000;
 }
 
 #toggleContainer {
-  width: 100px;
+  width: 200px;
   margin-right: auto;
   margin-left: auto;
   text-align: left;
   line-height: 25px;
+  display: flex;
+  position: relative;
 }
+
+#toggleSwitch {
+  position: absolute;
+  left: -30px;
+  top: 15px;
+}
+
+#toggleSwitchContainer {
+  height: 20px;
+  width: 20px;
+  border-radius: 20px;
+  border: 2px solid #000000;
+  background-color: #6d6d6d;
+  position: absolute;
+  left: -5px;
+}
+
+#toggleSwitchKnob {
+  height: 30px;
+  width: 10px;
+  background-color: #6d6d6d;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  position: absolute;
+  top: 5px;
+  box-shadow: 5px 5px 10px #000000;
+}
+

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.css'
 import Dial from './Dial'
 import InfoPanel from './InfoPanel'
+import { FaArrowTurnUp, FaPhone, FaEnvelope, FaFile } from "react-icons/fa6";
 
 
 export interface Dial {
@@ -11,8 +12,14 @@ export interface Dial {
 
 export interface PanelItem {
 	title: string,
-	description: string
+	description?: string
 	years?: number,
+	range?: string[],
+	list?: {
+		text: string,
+		link?: string,
+	}[],
+	grad?:number,
 	id: number
 }
 
@@ -21,24 +28,24 @@ const technicalSkills: PanelItem[] = [
 		id: 0,
 		title: 'Javascript/Typescript',
 		description: `Javascript & Typescript are the languages I have the most experience with. From writing my first 'hello-world' script to creating full stack applications, I've loved every moment of working with JavaScript. I gained experience working with Typescript during my time at Bushel where I really learned to appreciate its value for rapidly buidling and debugging.  Almost always, I reach for JavaScript first as an initial solution when problem solving in code; it's combinitation of simplicity and power made it a perfect first programming language for me to master`,
-		years: 7,
+		years: 8,
 	},
 	{
 		id: 1,
 		title: 'React/Vue',
 		description: `React & Vue are the two main front-end frameworks I have extensive experience with. During my four years at Bushel, I was involved in planning, desigining, building, and maintaing a proprietary React application that utilized the Chakra UI framework. During the past two and half years however, I've been working on Razor Tracking's Vue based application that uses a mix of front-end libraries as well as helping to transition the application from Vue to the latest version of React.`,
-		years: 6,
+		years: 7,
 	},
 	{
 		id: 2,
 		title: 'C#/ASP.NET',
 		description: `During my time at Razor Tracking, I've gained experience with different versions of ASP.NET as ASP.NET Core, working in an MVC architecture. I've primarily been responsibile for creating new endpoints for our front end application to request from, and writing any necessary backend logic for data transformation.`,
-		years: 2.5,
+		years: 3,
 	},
 	{
 		id: 3,
 		title: 'SQL',
-		description: `SQL is currently my favorite language to work. Like most engineers, I find joy in seeing how well I can optimize a query. Like .NET & C#, I've gained most of my knowledge and experience with SQL at Razor Tracking where I use it every day, mostly for debugging and data gathering but occassionally creating and updating tables and schemas`,
+		description: `SQL is currently my favorite language to work with. Like most engineers, I find joy in seeing how well I can optimize a query. Like .NET & C#, I've gained most of my knowledge and experience with SQL at Razor Tracking where I use it every day, mostly for debugging and data gathering but occassionally creating and updating tables and schemas`,
 		years: 3,
 	},
 	{
@@ -61,46 +68,185 @@ const technicalSkills: PanelItem[] = [
 	},
 ]
 
+const experienceItems: PanelItem[] = [
+		{
+		id: 0,
+		title: 'Razor Tracking',
+		description: `As a Full Stack Engineer, I primarily contribute to and maintain our proprietary Fleet Tracking software with a wide ranging stack of technologies including ASP.NET, C#, Vue, React, SQL, and JavaScript. I'm responsible for implementing new features from conception to release in both the frontend and backend logic, as well as contributing to database tables and schemas.`,
+		range: ['Nov 2023', 'Present']
+	},
+	{
+		id: 1,
+		title: 'Bushel',
+		description: `I was a Software Engineer 2 at Bushel for four years. During that time I mastered my React and Tyescript skills and was responsible for many features in the proprietary web UI that is used by thousands in the agriculture industry each day.`,
+		range: ['Dec 2019', 'Nov 2023']
+	},
+	{
+		id: 2,
+		title: 'Perficient',
+		description: `At Perficient, I worked with a variety of larger web technologies like Salesforce and Sitecore to help implement solutions for clients in the manufacturing industry.`,
+		range: ['May 2018', 'Dec 2019']
+	},
+		{
+		id: 3,
+		title: 'Absolute Marketing Group',
+		description: `I started my engineering career at Absolute Marketing Group building simple websites for the smaller clients on various technologies from Wordpress, React, basic HTML&CSS and even our own homegrown PHP library.`,
+		range: ['Aug 2017', 'May 2018']
+	},
+	{
+		id: 4,
+		title: 'Minnesota State Tech',
+		description: `After graduating from MSUM, I continued my education to get a certificate in Web Design. In addition to learning JavaScript, I gained further education in the Adobe Suite and various CMS technologies`,
+		grad: 2017
+	},
+	{
+		id: 5,
+		title: 'Minnesota State University',
+		description: `I graduated from Minnesota State University Moorehead with a BA in Marketing. During my time in college I served as the technology chair on the student council.`,
+		grad: 2016
+	},
+
+]
+const passionItems: PanelItem[] = [
+	{
+		id: 0,
+		title: 'What Makes Me The Best Candidate?',
+		description: `You'll never find someone more passionate about getting quality gear into the hands of musicians as quickly as possible, than me. The world needs more people making music, and Reverb is the best way for those musicians to get the gear they need to perfect their art, it would be an honor to be able to help in such an endevour. As a current Reverb buyer and seller, and certified gear and software addict, I will bring level of passion and care to the each line of code with a user focused mentality`,
+	},
+	{
+		id: 1,
+		title: 'Lets Talk Music!',
+		description: `I've been in local bands since I was fourteen and have always felt at home in local music scenes since. I've been in multiple bands of different genres while always making music of my own. I play guitar, bass, piano, a little drums, and am getting very into desktop synths currently.`,
+	},
+	{
+		id: 2,
+		title: 'Lets Talk Gear!',
+		description: `I'm a total gear nut. I love collecting pedals, synths, guitars, amps, and pretty much anything that can help me make noise. While my focus at Reverb will always be on writing code and creating the best possible product, I'll admit I'm excited to hopefully nerd out with fellow gear dorks.`,
+	},
+	{
+		id: 3,
+		title: 'About Me',
+		description: `I'm from a small town in North Dakota, (oh yeah, you bet'chya), and went to college and grew up in Fargo and moved to Chicago a year ago with my wife and two dogs.`,
+	},
+	{
+		id: 4,
+		title: 'Resume & References',
+		list: [
+			{
+				text: 'Resume',
+				link: './BradyDukartResume.pdf'
+			},
+			{
+				text: 'Letter of Recommendation',
+				link: './LetterOfRecommendation.pdf'
+			}
+		]
+	},
+	{
+		id: 5,
+		title: 'Contact',
+		description: `I'm available at any time at either of the following:`,
+		list: [
+			{
+				text: '701-729-3582',
+				link: 'tel:701-729-3582'
+			},
+			{
+				text: 'dukartbrady@gmail.com',
+				link: 'mailto:dukartbrady@gmail.com'
+			}
+		]
+	},
+]
+
 function App() {
-  const [skillsDial, setSkillsDial] = useState(0)
-  const [experienceDial, setExperienceDial] = useState(0)
-  const [extrasDial, setExtrasDial] = useState(0)
+  const [skillsDial, setSkillsDial] = useState(-140)
+  const [experienceDial, setExperienceDial] = useState(-140)
+  const [extrasDial, setExtrasDial] = useState(-140)
+	const [expSelected, setExpSelected] = useState(false)
+	const [hireModalOpen, setHireModalOpen] = useState(false);
 
   return (
-    <div id="body">
-      <InfoPanel position={skillsDial} items={technicalSkills} />
-      <div id="container">
-        <div id="bigMuff">
-          <div className="dialTitle">
-            Dial the Knobs!
-          </div>
-          <div id="dialsContainer">
-          <Dial title="Skills" position={skillsDial} setPosition={setSkillsDial} />
-          <Dial title="Experience" position={experienceDial} setPosition={setExperienceDial} />
-          <Dial title="Passions" position={extrasDial} setPosition={setExtrasDial} />
-          </div>
-          <div id="toggleContainer">
-            <p style={{borderBottom: '2px solid #000000'}}>Experience</p>
-            <p>Passions</p>
-          </div>
-          <div id="titleContainer">
-            <div id="light"></div>
-            <img src="/logo.png" alt="reverb_logo" id="reverbLogo" />
-            <div id="title">
-              <div id="name">Brady Dukart</div>
-              <div id="logo">Reverb's Best New Software Engineer</div>
-            </div>
-          </div>
-          <div id="bottomContainer">
-            <div id="activateButton"></div>
-            <div className="dialTitle">
-              Stomp to Connect!
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* <Skills /> */}
-    </div>
+		<>
+			<div id="body" onClick={() => hireModalOpen ? setHireModalOpen(false) : null}>
+			<div id="header">
+				<span>Brady Dukart</span>
+				<span id="contactLink" onClick={() => !hireModalOpen ? setHireModalOpen(true) : null}>Contact</span>
+			</div>
+			<div id="main">
+				<InfoPanel title="Technical Skills" position={skillsDial} items={technicalSkills} />
+				<div id="container">
+					<div id="bigMuff">
+						<div className="dialTitle" style={{color: 'white'}}>
+							Dial the Knobs, Toggle the Switch, or Stomp the Box!
+						</div>
+						<div id="dialsContainer">
+						<Dial title="Skills" position={skillsDial} setPosition={setSkillsDial} />
+						<Dial title="Education/Experience" position={experienceDial} setPosition={setExperienceDial} cb={() => !expSelected ? setExpSelected(true) : null} />
+						<Dial title="About" position={extrasDial} setPosition={setExtrasDial} cb={() => expSelected ? setExpSelected(false) : null} />
+						</div>
+						<div id="toggleContainer">
+							<div id="toggleSwitch" onClick={() => setExpSelected(!expSelected)}>
+								<div id="toggleSwitchContainer"></div>
+								<div id="toggleSwitchKnob" style={{ top: expSelected ? '-15px': ''}}></div>
+							</div>
+							<div>
+								<div style={{display: 'flex'}}>
+									<p style={{borderBottom: '2px solid #000000'}}>Education/Experience</p>
+									<div className="light" style={{ backgroundColor: expSelected ? '#ff0000' : ''}}></div>
+									</div>
+								<div style={{display: 'flex'}}>
+									<p>About</p>
+									<div className="light" style={{ backgroundColor: expSelected ? '' : '#ff0000'}}></div>
+								</div>
+							</div>
+						</div>
+						<div id="titleContainer">
+							<img src="/logo.png" alt="reverb_logo" id="reverbLogo" />
+							<div id="title">
+								<div id="name">Brady Dukart</div>
+								<div id="logo">Reverb's Best New Software Engineer</div>
+							</div>
+						</div>
+						<div id="bottomContainer">
+							<div id="activateButton" onClick={() => setHireModalOpen(true)}>
+								<div id="activateButtonSwitch">
+								</div>
+							</div>
+							<div id="hireTitle" onClick={() => setHireModalOpen(true)}>
+								Stomp to Hire! <FaArrowTurnUp />
+							</div>
+						</div>
+					</div>
+				</div>
+				{expSelected ? (
+					<InfoPanel title="Education & Experience" position={experienceDial} items={experienceItems}/>
+				): (
+					<InfoPanel title="About" position={extrasDial} items={passionItems}/>
+				)}
+			</div>
+		</div>
+				{hireModalOpen && (
+				<div id="modal">
+						<span id="modalHeader">I'm so excited to connect with you!</span>
+						<span>Please feel free to reach me at at your earliest convenience</span>
+						<div id="modalContact">
+							<a href="tel:701-729-3582">
+								<FaPhone className="modalIcon" />
+								<span className="modalIconTitle">Phone</span>
+							</a>
+							<a href="mailto:dukartbrady@gmail.com">
+								<FaEnvelope className="modalIcon" />
+								<span className="modalIconTitle">Email</span>
+							</a>
+							<a href="./BradyDukartResume.pdf" target="_blank">
+								<FaFile className="modalIcon" />
+								<span className="modalIconTitle">Resume</span>
+							</a>
+						</div>
+				</div>
+			)}
+		</>
   )
 }
 
