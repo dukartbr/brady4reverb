@@ -1,1 +1,3 @@
-## Reverb should hire Brady and here is why
+# Reverb should hire Brady
+
+[here is why](https://dukartbr.github.io/brady4reverb/)
