@@ -167,7 +167,7 @@ function App() {
 	const [hireModalOpen, setHireModalOpen] = useState(false);
 
   return (
-		<>
+		<div style={{backgroundColor: '#FEEFCD'}}>
 			<div id="body" onClick={() => hireModalOpen ? setHireModalOpen(false) : null}>
 			<div id="header">
 				<span>Brady Dukart</span>
@@ -245,7 +245,7 @@ function App() {
 						</div>
 				</div>
 			)}
-		</>
+		</div>
   )
 }
 

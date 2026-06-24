@@ -1,6 +1,5 @@
 #body {
   height: 100vh;
-  background-color: #FEEFCD !important;
   font-family: "Roboto", sans-serif;
   position: relative;
 }
@@ -33,7 +32,6 @@
   margin-right: auto;
   margin-left: auto;
   font-weight: bold;
-  background-color: #FEEFCD;
   font-family: "Roboto", sans-serif;
 }
 
