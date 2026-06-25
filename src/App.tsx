@@ -27,7 +27,7 @@ const technicalSkills: PanelItem[] = [
 	{
 		id: 0,
 		title: 'Javascript/Typescript',
-		description: `Javascript & Typescript are the languages I have the most experience with. From writing my first 'hello-world' script to creating full stack applications, I've loved every moment of working with JavaScript. I gained experience working with Typescript during my time at Bushel where I really learned to appreciate its value for rapidly buidling and debugging.  Almost always, I reach for JavaScript first as an initial solution when problem solving in code; it's combinitation of simplicity and power made it a perfect first programming language for me to master`,
+		description: `Javascript & Typescript are the languages I have the most experience with. From writing my first 'hello-world' script to creating full stack applications, I've loved every moment of working with JavaScript. I gained experience working with Typescript during my time at Bushel where I really learned to appreciate its value for rapidly buidling and debugging.  Almost always, I reach for JavaScript first as an initial solution when problem solving in code; it's combinitation of simplicity and power made it a perfect first programming language for me to master.`,
 		years: 8,
 	},
 	{
@@ -45,7 +45,7 @@ const technicalSkills: PanelItem[] = [
 	{
 		id: 3,
 		title: 'SQL',
-		description: `SQL is currently my favorite language to work with. Like most engineers, I find joy in seeing how well I can optimize a query. Like .NET & C#, I've gained most of my knowledge and experience with SQL at Razor Tracking where I use it every day, mostly for debugging and data gathering but occassionally creating and updating tables and schemas`,
+		description: `SQL is currently my favorite language to work with. Like most engineers, I find joy in seeing how well I can optimize a query. Like .NET & C#, I've gained most of my knowledge and experience with SQL at Razor Tracking where I use it every day, mostly for debugging and data gathering but occassionally creating and updating tables and schemas.`,
 		years: 3,
 	},
 	{
@@ -57,7 +57,7 @@ const technicalSkills: PanelItem[] = [
 	{
 		id: 5,
 		title: 'Python',
-		description: `Python is a language I'm currently learning in my free time and looking for any opportunity to use it more. I've built some personal terminal apps that get data an API request and update local .txt or SQL files`,
+		description: `Python is a language I'm currently learning in my free time and looking for any opportunity to use it more. I've built some personal terminal apps that get data an API request and update local .txt or SQL files.`,
 		years: 1,
 	},
 	{
@@ -96,7 +96,7 @@ const experienceItems: PanelItem[] = [
 	{
 		id: 4,
 		title: 'Minnesota State Tech',
-		description: `After graduating from MSUM, I continued my education to get a certificate in Web Design. In addition to learning JavaScript, I gained further education in the Adobe Suite and various CMS technologies`,
+		description: `After graduating from MSUM, I continued my education to get a certificate in Web Design. In addition to learning JavaScript, I gained further education in the Adobe Suite and various CMS technologies.`,
 		grad: 2017
 	},
 	{
@@ -111,7 +111,7 @@ const passionItems: PanelItem[] = [
 	{
 		id: 0,
 		title: 'What Makes Me The Best Candidate?',
-		description: `You'll never find someone more passionate about getting quality gear into the hands of musicians as quickly as possible, than me. The world needs more people making music, and Reverb is the best way for those musicians to get the gear they need to perfect their art, it would be an honor to be able to help in such an endevour. As a current Reverb buyer and seller, and certified gear and software addict, I will bring an unparalleled level of passion and care to the each line of code with a user focused mentality`,
+		description: `You'll never find someone more passionate about getting quality gear into the hands of musicians as quickly as possible, than me. The world needs more people making music, and Reverb is the best way for those musicians to get the gear they need to perfect their art, it would be an honor to be able to help in such an endevour. As a current Reverb buyer and seller, and certified gear and software addict, I will bring an unparalleled level of passion and care to the each line of code with a user focused mentality.`,
 	},
 	{
 		id: 1,
@@ -126,7 +126,7 @@ const passionItems: PanelItem[] = [
 	{
 		id: 3,
 		title: 'About Me',
-		description: `I'm from a small town in North Dakota, (oh yeah, you bet'chya), and went to college and grew up in Fargo and moved to Chicago a year ago with my wife and two dogs.`,
+		description: `I'm from a small town in North Dakota, (oh yeah, you bet'chya), and went to college in Fargo. I moved to Chicago a year ago with my wife and our two dogs. When I'm not coding or making music, I enjoy collecting comic books and bike riding.`,
 	},
 	{
 		id: 4,
