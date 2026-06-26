@@ -174,7 +174,7 @@ function App() {
 				<span id="contactLink" onClick={() => !hireModalOpen ? setHireModalOpen(true) : null}>Contact</span>
 			</div>
 			<div id="main">
-				<InfoPanel title="Technical Skills" position={skillsDial} items={technicalSkills} />
+				<InfoPanel title="Technical Skills" position={skillsDial} items={technicalSkills} panelHandler={(val) => setSkillsDial(val)}  />
 				<div id="container">
 					<div id="bigMuff">
 						<div className="dialTitle" style={{color: 'white'}}>
@@ -219,9 +219,9 @@ function App() {
 					</div>
 				</div>
 				{expSelected ? (
-					<InfoPanel title="Education & Experience" position={experienceDial} items={experienceItems}/>
+					<InfoPanel title="Education & Experience" position={experienceDial} items={experienceItems} panelHandler={(val) => setExperienceDial(val)} />
 				): (
-					<InfoPanel title="About" position={extrasDial} items={passionItems}/>
+					<InfoPanel title="About" position={extrasDial} items={passionItems} panelHandler={(val) => setExtrasDial(val)} />
 				)}
 			</div>
 		</div>

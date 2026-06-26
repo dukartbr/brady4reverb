@@ -1,34 +1,25 @@
 import type { PanelItem } from './App'
 
-// I hate this thing so much
 function calculatePanelOpen(position: number, id: number, count: number) {
-		if (id == 0 && position < -100) {
-			return true;
-		} else if (id == 1 && position < -60 && position > -100) {
-			return true;
-		} else if (id == 2 && position < -20 && position > -60) {
-			return true;
-		} else if (id == 3 && position < 20 && position > -20) {
-			return true;
-		} else if (id == 4 && position < 60 && position > 20) {
-			return true;
-		} else if (id == 5 && position < 100 && position > 60) {
-			return true;
-		} else if (id == 6 && position > 100) {
-			return true;
-		} else if (id == count - 1 && position > 100) {
-			return true;
-		}
+  const activeId = Math.max(
+    0,
+    Math.min(
+      count - 1,
+      Math.floor((position + 140) / 40)
+    )
+  );
+
+  return id === activeId;
 }
 
-export default function InfoPanel({title, position, items}: {title: string, position: number, items: PanelItem[]}) {
+export default function InfoPanel({title, position, items,  panelHandler}: {title: string, position: number, items: PanelItem[], panelHandler: (val: number) => void}) {
 
 	return (
 		<div className="infoContainer">
 			<h2 className="infoTitle">{title}</h2>
 			{items.map(s => {
 				return (
-					<div key={s.id} className="infoDropDownHeader">
+					<div key={s.id} className="infoDropDownHeader" onClick={() => panelHandler(s.id * 40 - 140)}>
 						<div style={{display: 'flex', justifyContent: 'space-between'}}>
 							<span>{s.title}</span>
 							{s.years && (

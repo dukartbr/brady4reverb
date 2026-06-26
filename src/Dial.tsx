@@ -11,7 +11,6 @@ export default function Dial({title, position, setPosition, cb}: {title: string,
 		startX.current = e.clientX
 		startValue.current = position;
 
-		console.log('startY.current ,startX.current')
 		function handlePointerMove(mover: any) {
 			const deltaY = startY.current - mover.clientY;
 			const deltaX = startY.current - mover.clientY;
