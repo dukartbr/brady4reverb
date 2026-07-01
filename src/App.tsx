@@ -198,7 +198,7 @@ function App() {
   const [skillsDial, setSkillsDial] = useState(-140)
   const [experienceDial, setExperienceDial] = useState(-140)
   const [extrasDial, setExtrasDial] = useState(-140)
-	const [expSelected, setExpSelected] = useState(false)
+	const [expSelected, setExpSelected] = useState(true)
 	const [hireModalOpen, setHireModalOpen] = useState(false);
 
 	const [activePedal, setActivePedal] = useState(true);
